@@ -1,0 +1,100 @@
+/*
+    Michael Kellems
+    CIT 312
+    Prof. Kane
+    2/26/25
+*/
+
+@yellow-gold: rgb(200, 150, 0);
+@pure-red: rgb(255, 0, 0);
+@pure-green: rgb(0, 255, 0);
+@pure-blue: rgb(0, 0, 255);
+@pure-violet: rgb(255, 0, 255);
+@header-offset: 50px;
+@box-size-1: 100px;
+@box-size-2: 200px;
+@box-size-3: 250px;
+@box-size-4: 50px;
+
+.Create_Main_File{
+    color: black;
+    text-align: center;
+    margin: 0 auto;
+    background-color: gray;
+}
+
+.Box_Borders{
+    border: 2px solid black;
+    border-radius: 8px;
+}
+
+.Create_Box{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    height: 80% - @header-offset;
+    position: absolute;
+    top: @header-offset;
+    padding-top: @header-offset*3;
+    justify-content: space-evenly;
+    #box-1{
+        .Box_Borders();
+        background-color: @pure-red;
+        width: @box-size-1;
+        height: @box-size-1;
+    }
+    #box-2{
+        .Box_Borders();
+        background-color: @pure-blue;
+        width: @box-size-2;
+        height: @box-size-2;
+    }
+    #box-3{
+        .Box_Borders();
+        background-color: darken(@pure-green, 30%);
+        width: @box-size-3;
+        height: @box-size-3;
+    }
+    #box-4{
+        .Box_Borders();
+        background-color: darken(@pure-violet, 30%);
+        width: @box-size-4;
+        height: @box-size-4;
+    }
+}
+
+.header-setup{
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    height: @header-offset;
+    top: 0;
+    left: 0;
+    background-color: @yellow-gold;
+}
+
+html{
+    .Create_Main_File();
+}
+
+header{
+    .header-setup();
+}
+
+h1{
+    margin: 0 auto;
+}
+
+#boxes{
+    .Create_Box();
+}
+
+footer{
+    width: 100%;
+    height: @header-offset;
+    background-color: white;
+    position: fixed;
+    left: 0;
+    top: 80%;
+}
